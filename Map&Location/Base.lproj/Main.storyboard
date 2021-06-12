@@ -17,19 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9GQ-Dn-eeQ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9GQ-Dn-eeQ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SxI-f3-UDU">
+                                <rect key="frame" x="126" y="832" width="163" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Remove all points"/>
+                                <connections>
+                                    <action selector="removeAllAnnotationsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WNb-Aw-dfY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="9GQ-Dn-eeQ" secondAttribute="bottom" id="7d5-pZ-nhm"/>
-                            <constraint firstItem="9GQ-Dn-eeQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ClA-P7-UYS"/>
-                            <constraint firstItem="9GQ-Dn-eeQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="J0a-cb-yoS"/>
-                            <constraint firstItem="9GQ-Dn-eeQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jXr-n0-qbA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SxI-f3-UDU" secondAttribute="trailing" constant="125" id="JC7-P7-hPI"/>
+                            <constraint firstItem="SxI-f3-UDU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="LMl-tx-9iT"/>
+                            <constraint firstItem="SxI-f3-UDU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="X2V-4d-CAn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="9GQ-Dn-eeQ" id="g01-Ce-l3f"/>
+                        <outlet property="removeAllPointsButton" destination="SxI-f3-UDU" id="wgI-Rg-wp0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
